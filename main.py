@@ -2,13 +2,23 @@
 
 
 def text_numeral(num):
-    """Changes number to text based on range of numbers"""
+    """
+    Changes number to text based on range of numbers
+
+    Parameters
+    ----------
+    num: int
+        number to change to text
+
+    Returns
+    -------
+    str
+    text of number provided as parameter
+    
+    """
     
     num = str(num)
 
-    """
-    Dictionary for number to text
-    """
     num_dict = {
         1: "one",
         2: "two",
@@ -40,10 +50,6 @@ def text_numeral(num):
     }
     text = ""
     if len(num) == 2 and num[0] != '0':
-        """
-        For numbers 20 to 99
-        """
-            
         tens = int(num[0]) * 10
         if tens >= 20:
             text += num_dict[tens]
@@ -54,18 +60,12 @@ def text_numeral(num):
     
         elif tens < 20:
     
-            """
-            For numbers 11 to 19
-            """
             num = int(num)
             text += num_dict[num]
     elif len(num) == 1:
-        """
-        For numbers 1-9
-        """
+
         if num[0] in '123456789':
             ones = int(num[0])
             text += num_dict[ones]
     return text
 
-    pass
